@@ -1,0 +1,18 @@
+.show-posts-container{
+    padding: 20px;
+}
+.show-posts{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 100%;
+    min-height: 500px;
+}
+.post{
+    width: 300px;
+    min-height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 2px;
+    padding: 5px;
+    float: left;
+}
