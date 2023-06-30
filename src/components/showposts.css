@@ -1,18 +1,31 @@
 .show-posts-container{
     padding: 20px;
+    min-height: 500px;
 }
 .show-posts{
-    border: 1px solid black;
     border-radius: 5px;
+    box-shadow: 0px 0px 1px black;
     width: 100%;
     min-height: 500px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .post{
     width: 300px;
-    min-height: 300px;
+    height: 200px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 2px;
     padding: 5px;
     float: left;
+}
+#delete{
+    background-color: orange;
+    color: white;
+}
+#edit{
+    background-color: aquamarine;
 }

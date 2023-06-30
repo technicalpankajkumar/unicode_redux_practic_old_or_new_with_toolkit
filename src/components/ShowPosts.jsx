@@ -1,26 +1,38 @@
 import React from 'react'
 import './showposts.css'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { deletePost } from '../app/redux/actions'
 
 export default function ShowPosts() {
 
     const posts = useSelector(state => state.posts)
-    console.log(posts)
+    const dispatch = useDispatch()
 
     return (
         <div className="show-posts-container">
+            <h2 style={{ textAlign: "center" }}>All Posted Posts</h2>
             <div className="show-posts">
-                <h3 style={{ textAlign: "center" }}>All Posted Posts</h3>
                 {
-                    posts.map(posts => {
-                        <div className="post">
+                    posts.map(post => {
+                        return <div className="post" key={post.id}>
                             <div className="post-title">
                                 <h4>Post Title : </h4>
-                                <p>{posts.title}</p>
+                                <p>{post.title}</p>
                             </div>
                             <div className='post-para'>
                                 <h4>Paragraph : </h4>
-                                <p>{posts.para}</p>
+                                <p>{post.para}</p>
+                            </div>
+                            <div className='post-actions'>
+                                <button
+                                    type='button'
+                                    id="delete"
+                                    onClick={() => dispatch(deletePost(post.id))}
+                                >Delete</button>
+                                <button
+                                    type='button'
+                                    id='edit'
+                                >Edit</button>
                             </div>
                         </div>
                     })

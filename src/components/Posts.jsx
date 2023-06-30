@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
 import './posts.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {createPost} from '../app/redux/actions'
 import { nanoid } from '@reduxjs/toolkit'
+
 export default function Posts() {
 
     const fields={ id: nanoid(), title: "", para: "" }
@@ -12,9 +13,9 @@ export default function Posts() {
     const dispatch = useDispatch()
 
     const handlePost =()=>{
-        
-        setPostData(fields)
         dispatch(createPost(postData))
+        let id=nanoid()
+        setPostData({...fields,id:id})
     }
 
     return (

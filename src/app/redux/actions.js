@@ -1,4 +1,4 @@
-import { CREATE_POST } from "../constants";
+import { CREATE_POST, DELETE_POST } from "../constants";
 
 function createPost(post){
     return {
@@ -7,4 +7,10 @@ function createPost(post){
     }
 }
 
-export {createPost}
+function deletePost(id){
+    return {
+        type:DELETE_POST,
+        payload:id
+    }
+}
+export {createPost,deletePost}
