@@ -4,16 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// redux code start here
-
 import { Provider } from 'react-redux';
-import { store } from './app/store';
+
+// redux code start here
+// import { store } from './app/redux/store'
+
+//redux-thunk start here
+import { store } from './app/redux_thunk/store';
+
 
 // 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <Provider store={store}>
-    <App />
+      <App />
    </Provider>
 );
 

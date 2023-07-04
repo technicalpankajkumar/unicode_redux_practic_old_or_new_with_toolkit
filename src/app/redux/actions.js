@@ -1,4 +1,4 @@
-import { CREATE_POST, DELETE_POST } from "../constants";
+import { CREATE_POST, DELETE_POST } from "./constants";
 
 function createPost(post){
     return {
